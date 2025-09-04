@@ -1,13 +1,42 @@
-# About Me
-*My name is Mohammed Ihtisham, I'm a senior at MIT studying Computer Science & Engineering (6-3) and Business Analytics (15-2). I'm very interested in the intersections of software engineering, artificial intelligence, and entrepreneurship. [Here is a link to my real website (not updated post 2024).](https://mohammed-ihtisham.github.io/)*
+# 🌟 Welcome to My 6.104 Portfolio
 
-Some fun facts about me:
-1. I really enjoy playing football as a wide reciever.
-2. Besides coding, I'm very interested in graphic design since I was younger.
-3. I'm a huge car guy and am obsessed with sports cars (especially BMWs).
+Hello World!
 
-![picture of snow leopard mama and baby](https://pbs.twimg.com/media/GzYlia3XMAAWfm4?format=jpg&name=4096x4096)
+I’m **Mohammed Ihtisham**, a senior at **MIT** studying:  
+- Computer Science & Engineering (6-3)  
+- Business Analytics (15-2)  
 
+I’m passionate about the intersections of **software engineering, artificial intelligence, and entrepreneurship**, and this repo is where I’m showcasing my personal projects for this course.  
 
-# Table of Contents
-[Link to Assignment 1](assignments/assignment1.md)
+[Visit my personal website (note: not updated since 2024)](https://mohammed-ihtisham.github.io/)  
+
+---
+
+## About Me  
+
+A few things beyond the code:  
+
+1. I play football as a wide receiver.  
+2. I’ve been into graphic design since middle school—design is my creative outlet.  
+3. I’m a serious car enthusiast, with a soft spot for BMWs and sports cars in general.  
+
+> “Code hard, design smart, and always downshift before a corner.”  
+
+![M5 F90 Competition](https://maxtondesign.com/hpeciai/bd99a881c65dc98fe4d597ddba066ac1/eng_pl_Rear-Splitter-BMW-M5-F90-8030_2.jpg)  
+
+---
+
+## 📂 Table of Contents  
+
+- 📘 [Assignment 1](assignments/assignment1.md)  
+
+(More assignments and projects will appear here as the repo grows.)  
+
+---
+
+## 🎯 Repo Vibes  
+
+This repo is:  
+- 🌱 A space to grow my coding + design experiments  
+- 🔧 A playground for learning and iterating  
+- 🎉 Hopefully fun to scroll through!  
