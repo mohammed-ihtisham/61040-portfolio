@@ -145,21 +145,21 @@
 
 ## Features
 
-### Hidden service and accident history  
+### 1. Hidden service and accident history  
 - **VIN-based risk summary:** Buyers can enter a car’s VIN to receive a simple overview of hidden risks such as odometer tampering, salvage branding, or missing records. This gives non-experts a clear picture of whether a car’s past might hide costly problems.  
 - **Repair and cost outlook:** The app translates mileage and vehicle history into likely upcoming repairs, such as brake replacements or timing belt changes, along with estimated costs. This helps buyers feel more confident about long-term ownership.  
 - **Trust score for each listing:** Each car is assigned a trust score that combines accident history, service gaps, and seller credibility. This lets buyers quickly compare vehicles without having to analyze raw reports.  
 
 ---
 
-### Overwhelm from generic reviews and ratings  
+### 2. Overwhelm from generic reviews and ratings  
 - **Interactive photo map:** Instead of scrolling through text reviews, users can browse an interactive map filled with authentic photos of places, similar to Apple Photos’ map view. This makes it easy to get an immediate sense of a location’s vibe before visiting.  
 - **Interest-based filtering:** Users can filter destinations based on personal interests, such as quiet cafés for studying or lively restaurants for groups. This reduces irrelevant options and makes discovery feel more personal.  
 - **Community highlight reels:** Places are summarized through short, visual highlight reels curated from visitor contributions. This balances authenticity with simplicity, helping users see what stands out most without being overwhelmed.  
 
 ---
 
-### Static and lifeless friends lists  
+### 3. Static and lifeless friends lists  
 - **Dynamic constellation view:** Connections are shown as stars in a constellation, brightening as people interact more and fading as ties weaken. This makes relationships feel more alive and reflective of real-world dynamics.  
 - **Connection pathways:** Users can see how they are linked to friends-of-friends, with shared contexts highlighted along the way. This creates opportunities to discover new connections or reconnect with people through mutual ties.  
 - **Relationship reminders:** The app provides subtle prompts when important ties begin to fade. These reminders encourage healthier engagement without overwhelming users with notifications.  
