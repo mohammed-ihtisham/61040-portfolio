@@ -40,3 +40,63 @@ actions
 
 ### Q7. Generic types
 Using generic `User` and `Item` identities (for example, representing `Item` by a stable ID such as an SKU) is preferable to storing item properties (names, descriptions, prices, etc.). This keeps the GiftRegistration concept independent: the registry only needs to identify which item was requested or purchased and should not depend on or duplicate properties that belong in other concepts. It also improves stability over time, since names, descriptions, and prices can change while the identity remains constant, ensuring historical records continue to reference the correct item even if details are updated elsewhere.
+
+
+## Exercise 2: Extending a Familiar Concept — PasswordAuthentication
+
+### Q1–Q2. State and action specifications
+
+```text
+concept PasswordAuthentication
+purpose limit access to known users
+principle after a user registers with a username and password, they can authenticate
+  with the same credentials and be treated as the same user
+
+state
+  a set of Users with
+    a username String
+    a password String
+
+actions
+  register (username: String, password: String): (user: User)
+    requires no user exists with this username
+    effects create and return a fresh user with that username and password
+
+  authenticate (username: String, password: String): (user: User)
+    requires a user u exists with u.username = username
+    effects return u if u.username = username and u.password = password
+```
+
+### Q3. Essential invariant
+The essential invariant that must hold on the state is that usernames are unique (each username maps to exactly one user). The `register` action preserves this invariant by requiring that no user exists with the given username before creating a new user.
+
+### Q4. Extension: email confirmation
+
+We can extend the concept by adding email confirmation using a one-time token returned by `register`. The user confirms via `confirm`, which marks them as confirmed and deletes the token. Authentication continues to require only a matching username and password but if you want to allow only verified users to log in, we can simply add a `confirmed` check to `authenticate`’s precondition.
+
+```text
+# Additions/updates to PasswordAuthentication
+
+state
+  a set of Users with
+    a username String
+    a password String
+    a confirmed Boolean
+  a set of ConfirmTokens with
+    a user User
+    a secret String
+
+actions
+  register (username: String, password: String): (user: User, token: String)
+    requires no user exists with this username
+    effects create user u with username, password, confirmed = false;
+      create token t for u with a fresh secret s; return (u, s)
+
+  confirm (username: String, token: String)
+    requires a user u with u.username = username and u.confirmed = false
+      and a token t with t.user = u and t.secret = token
+    effects set u.confirmed = true; remove token t
+
+  authenticate (username: String, password: String): (user: User)
+    requires a user u exists with u.username = username and u.password = password
+    effects return u
