@@ -6,13 +6,13 @@
 - **Invariant 1:** For each request, the remaining amount plus the sum of purchased amounts equals the total requested so far for that request.
 - **Invariant 2:** Every Purchase belongs to exactly one Request in exactly one Registry, and for that request `purchase.Item == request.Item`.
 
-The more important invariant is Invariant 1, because it prevents overselling and directly realizes the core requirement that purchases never exceed what has been requested. The action whose design is most constrained by this is `purchase`, as its `requires` clause demands that the matching request has at least the requested `count` remaining, and its `effects` clause both decrements `request.count` and adds a purchase of that count, preserving the accounting equality.
+The more important invariant is Invariant 1, because if this accounting slips—even briefly—the registry can mislead friends about availability (showing items as available when they aren’t) or allow more to be purchased than was requested. That directly breaks the user-facing purpose of the concept: helping recipients get what they asked for without duplicates. The action most constrained by this is `purchase`, whose precondition requires enough remaining count and whose effect both decrements `request.count` and records the purchase, keeping the equality true.
 
 ### Q2. Fixing an action
-The `removeItem` action can violate the invariants: if a request is removed after purchases have been recorded for that item, those purchases would no longer be connected to any request, so tracking breaks. The fix is to tighten the precondition so a request can be removed only if it has no purchases. More generally, any action that modifies a request after purchases exist must preserve the aggregation invariant.
+The `removeItem` action can violate this invariant since if a request is removed after purchases have been recorded for that item, those purchases would no longer be connected to any request, so tracking breaks. The fix is to tighten the precondition so a request can be removed only if it has no purchases.
+
 ### Q3. Inferring behavior
-Yes, a registry can be opened and closed repeatedly. The `open` action requires that the registry exists and is not active, and the `close` action requires that it exists and is active. Nothing in the spec prevents alternating between these states.  
-One possible reason for this flexibility is to let recipients pause purchasing (to adjust items or timing) and reopen later without creating a new registry.
+Yes, a registry can be opened and closed repeatedly. The `open` action requires that the registry exists and is not active, and the `close` action requires that it exists and is active. Nothing in the spec prevents alternating between these states. One possible reason for this flexibility is to let recipients pause purchasing (to adjust items or timing) and reopen later without creating a new registry.
 
 ### Q4. Registry deletion
 In practice, this usually doesn’t matter in terms of functionality: closing a registry is enough to end its public visibility while preserving purchase history (useful for thank-yous and records). Adding deletion would complicate things because purchases would need careful handling to avoid breaking tracking. Unless there’s a policy or legal requirement to remove data, keeping closed registries is the simpler, safer design. If storage or retention costs are a real constraint, a separate data-retention policy could justify adding `deleteRegistry(registry)`, but that’s an implementation concern and not essential to the core behavior.
@@ -63,8 +63,8 @@ actions
     effects create and return a fresh user with that username and password
 
   authenticate (username: String, password: String): (user: User)
-    requires a user u exists with u.username = username
-    effects return u if u.username = username and u.password = password
+    requires a user u exists with u.username = username and u.password = password
+    effects return u
 ```
 
 ### Q3. Essential invariant
@@ -100,3 +100,42 @@ actions
   authenticate (username: String, password: String): (user: User)
     requires a user u exists with u.username = username and u.password = password
     effects return u
+```
+
+## Exercise 3: Comparing Concepts — PasswordAuthentication vs. PersonalAccessToken
+
+### PersonalAccessToken (classic): minimal concept specification
+
+```text
+concept PersonalAccessTokenClassic [User, Scope, Resource]
+purpose enable programmatic access on behalf of a user using a bearer token limited by scopes
+principle a user generates a token with chosen scopes (and optionally an expiration), then uses
+  the token in place of a password for API or HTTPS Git operations; the user can later revoke it
+
+state
+  a set of Tokens with
+    an owner User
+    a secret String
+    a set of scopes Scope
+    an expiresAt DateTime?   // optional expiration
+    an active Flag
+
+actions
+  generate (owner: User, scopes: Set[Scope], expiresAt?: DateTime): (token: Token)
+    effects create and return a fresh active token for owner with secret, scopes, and optional expiry
+
+  revoke (t: Token)
+    requires t is active
+    effects set t.active := false
+
+  authenticateWithToken (t: Token, op: Operation, res: Resource): (user: User)
+    requires t is active, now < t.expiresAt if set, and t.scopes permit op on res
+    effects return t.owner
+```
+
+### Differences from Password Authentication
+Compared with PasswordAuthentication, personal access tokens are scoped credentials: each token is created with explicit, limited permissions, can include an expiration, and can be revoked on its own. This makes tokens temporary, rotation-friendly secrets suited to automation, whereas a password is a single, long-lived credential that effectively carries the user’s full access and must be changed everywhere if compromised. Users can hold many tokens concurrently for different tools or environments, but typically only one account password.
+
+### Suggested Improvement to GitHub Docs
+
+I would start the Github Docs with a clearer “tokens vs. passwords” section that states the security model up front: tokens are scoped, individually revocable, optionally expiring bearer credentials for programmatic access (CLI/API), while passwords are broad, long-lived credentials for human web login. I’d lead with those conceptual differences—scope, expiration, and revocation—and then add a tight comparison table that answers “when to use a token vs. a password.” Finally, I’d explicitly emphasize that tokens are the default for automation and that passwords should be used only for interactive web login.
