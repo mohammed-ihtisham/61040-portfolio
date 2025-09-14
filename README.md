@@ -28,7 +28,11 @@ A few things beyond the code:
 
 ## 📂 Table of Contents  
 
-- 📘 [Assignment 1](assignments/assignment1.md)  
+### 📘 Assignments
+- [Assignment 1](assignments/assignment1.md)
+
+### 📘 Problem Sets
+- [Problem Set 1](psets/pset1.md)
 
 (More assignments and projects will appear here as the repo grows.)  
 
