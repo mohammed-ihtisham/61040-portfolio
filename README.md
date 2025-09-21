@@ -33,6 +33,7 @@ A few things beyond the code:
 
 ### 📘 Problem Sets
 - [Problem Set 1](psets/pset1.md)
+- [Problem Set 2](psets/pset2.md)
 
 (More assignments and projects will appear here as the repo grows.)  
 
