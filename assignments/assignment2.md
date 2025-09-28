@@ -21,7 +21,21 @@ Many people like me struggle when trying to find new nearby places. Platforms li
 - [Consumers abandon purchases due to review overload (***Evidence***)](https://www.customerexperiencedive.com/news/information-overload-reviews-overwhelm-shopping-expereience/720658/): Nearly three-quarters of consumers walk away from purchases because too many reviews made decision-making difficult, showing how review overwhelm directly leads to user abandonment.
 - [Published research shows generic reviews diminish impact (***Evidence***)](https://www.customerexperiencedive.com/news/information-overload-reviews-overwhelm-shopping-expereience/720658/): Studies find that when reviews are too numerous or repetitive, they lose practical value. Instead of aiding decisions, they create cognitive dissonance and make choices harder.
 - [Choice overload reduces decision satisfaction (***Evidence***)](https://www.researchgate.net/publication/265170803_Choice_Overload_A_Conceptual_Review_and_Meta-Analysis): A meta-analysis of 99 studies found that excessive options reduce confidence and satisfaction, paralleling how long review lists overwhelm people choosing places to visit.
-- [Americans waste nearly five full days per year deciding what to watch (***Evidence***)](https://finance.yahoo.com/news/lost-stream-survey-finds-americans-140000909.html): A national survey found that people spend over 110 hours a year just deciding what to watch on streaming platforms, showing how content overload wastes time and mirrors the drag of scrolling through endless local reviews.
 - [Yelp • Local business reviews (***Comparable***)](https://www.yelp.com): Yelp provides massive coverage of local spots through crowdsourced reviews. However, its long lists of repetitive text often cause decision fatigue instead of simplifying discovery.  
 - [Google Maps • Crowdsourced ratings (***Comparable***)](https://maps.google.com): Google Maps integrates ratings with directions, making it convenient. But its brevity and prevalence of fake or generic reviews make it unreliable for nuanced decisions.  
-- [Tripadvisor • Travel-focused reviews (***Comparable***)](https://www.tripadvisor.com): Tripadvisor helps tourists find attractions with detailed reviews. However, its skew toward out-of-town voices makes it less useful for locals seeking everyday places.  
+- [Tripadvisor • Travel-focused reviews (***Comparable***)](https://www.tripadvisor.com): Tripadvisor helps tourists find attractions with detailed reviews. However, its skew toward out-of-town voices makes it less useful for locals seeking everyday places.
+
+## Application Pitch
+
+**Name: Unwindr**
+
+**Motivation:** People want fast, visual clarity about where to go without having to read hundreds of reviews.
+
+**Key Features:**
+
+***Interactive Photo Map:*** Instead of scrolling through endless text reviews, users explore an interactive map populated with authentic photos from real visitors. This feature eliminates review overwhelm by providing immediate visual context that lets users quickly assess whether a place matches their vibe. Explorers can make faster, more confident decisions, while local businesses can showcase their unique atmosphere without getting buried under generic ratings. Platform operators benefit from increased user engagement as discovery becomes browsing rather than reading.
+
+***Smart Interest Filtering:*** Users set personal preferences like "quiet study spots," "lively group dining," or "Instagram-worthy views" to see only relevant places. This feature reduces cognitive overload by eliminating irrelevant options before users even see them. Explorers save time and feel more confident about their choices, local businesses get matched with their ideal customers, and platform operators see higher conversion rates as users find places that truly fit their needs.
+
+***Community Highlight Reels:*** Each place features a short visual summary created from authentic visitor contributions, showing what makes the location special without overwhelming detail. This feature balances comprehensive information with digestibility, giving explorers just enough context to decide without information overload. Local businesses get authentic representation of their best qualities, while platform operators provide value through curation without requiring extensive content moderation.
+
