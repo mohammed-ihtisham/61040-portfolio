@@ -30,6 +30,7 @@ A few things beyond the code:
 
 ### 📘 Assignments
 - [Assignment 1](assignments/assignment1.md)
+- [Assignment 2](assignments/assignment2.md)
 
 ### 📘 Problem Sets
 - [Problem Set 1](psets/pset1.md)
