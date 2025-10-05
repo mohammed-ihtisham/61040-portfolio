@@ -31,6 +31,7 @@ A few things beyond the code:
 ### 📘 Assignments
 - [Assignment 1](assignments/assignment1.md)
 - [Assignment 2](assignments/assignment2.md)
+- [Assignment 3](https://github.com/mohammed-ihtisham/unwindr-ai-feature)
 
 ### 📘 Problem Sets
 - [Problem Set 1](psets/pset1.md)
