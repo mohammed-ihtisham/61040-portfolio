@@ -33,6 +33,7 @@ A few things beyond the code:
 - [Assignment 2](assignments/assignment2.md)
 - [Assignment 3](https://github.com/mohammed-ihtisham/unwindr-ai-feature)
 - [Assignment 4a](https://github.com/mohammed-ihtisham/Unwindr)
+- [Assignment 4b](https://github.com/mohammed-ihtisham/Unwindr-App)
 
 ### 📘 Problem Sets
 - [Problem Set 1](psets/pset1.md)
